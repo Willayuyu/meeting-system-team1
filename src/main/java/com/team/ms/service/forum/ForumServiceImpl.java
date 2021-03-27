@@ -1,5 +1,6 @@
 package com.team.ms.service.forum;
 
+import com.team.ms.dao.ForumMapper;
 import com.team.ms.pojo.Forum;
 import org.springframework.beans.factory.annotation.Autowired;
 

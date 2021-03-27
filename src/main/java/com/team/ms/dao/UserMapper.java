@@ -14,6 +14,7 @@ public interface UserMapper
     void updateUser(User user);
     List<User> selectUsers();
     User selectUserById(String uid);
+    List<User> selectUsersByForum(String forum);
     void deleteUser(String uid);
     boolean isUsernameExist(String username);
     boolean isEmailExist(String email);

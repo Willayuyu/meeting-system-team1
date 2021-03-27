@@ -65,6 +65,30 @@ label{
 #msg_title{
     margin-left: 55px;
 }
+#msg_password{
+    margin-left: 55px;
+}
+#msg_name{
+    margin-left: 55px;
+}
 .modal-title{
     text-align: center;
+}
+.topm{
+    padding: 20px 60px;
+    text-align: center;
+    font-weight: bold;
+    font-size: large;
+}
+.list{
+    margin:40px 50px
+}
+.marg{
+    text-align: center;
+}
+.leftbtn{   
+    width: 200px;
+}
+.form-margin{
+    width: 450px;
 }

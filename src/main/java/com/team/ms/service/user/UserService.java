@@ -5,5 +5,5 @@ import com.team.ms.pojo.User;
 import java.util.List;
 
 public interface UserService {
-    List<User> selectUsersByForum();
+    List<User> selectUsersByForum(String formname);
 }

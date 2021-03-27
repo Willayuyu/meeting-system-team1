@@ -11,7 +11,7 @@ public class UserServiceImpl implements UserService{
     UserMapper userMapper;
 
     @Override
-    public List<User> selectUsersByForum() {
-        userMapper.selectUsersByForum()
+    public List<User> selectUsersByForum(String formname) {
+        return userMapper.selectUsersByForum(formname);
     }
 }

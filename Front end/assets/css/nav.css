@@ -1,0 +1,70 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.clear {
+    clear: both;
+}
+body{
+    width: 100%;
+    font: Arial, Verdana, Arial, Helvetica, sans-serif;
+    background: url(https://images.cnblogs.com/cnblogs_com/Yuuuu/1953365/o_210327083119background.png) no-repeat ;
+    background-size: cover;
+}
+#container{
+    margin: 0 auto;
+}
+#top {
+    height: 60px;
+    background-color: rgba(240, 248, 255, 0);
+}
+nav{
+    width: 80%;
+    margin: 0 auto;
+}
+img{
+    width: 40px;
+    margin-top: 10px;
+}
+h3{
+    margin-left: 20px;
+    float: right;
+    font-weight: bold;  
+    color: rgb(87, 116, 197);
+}
+#toplogo {
+    float: left;
+}
+#menu {
+    float: right;
+    margin-top: 10px;
+}
+#app{
+    height: 800px;
+}
+#main{
+    width: 80%;
+    margin: 40px auto;
+    height: auto;
+}
+.form-control{
+    width: 200px;
+    display: inline;
+}
+#msg_form{
+    margin: 20px 20px 0px 20px;
+    
+}
+#msg_content{
+    width: 80%;
+    margin-left: 55px;
+}
+label{
+    margin: 10px 10px 10px 60px;
+}
+#msg_title{
+    margin-left: 55px;
+}
+.modal-title{
+    text-align: center;
+}

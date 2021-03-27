@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.team.ms.dao.ForumMapper">
+
+    <insert id="insertForum" parameterType="forum">
+        insert into forum(forumname,cid,holdtime,loaction,subject,introduction)
+        values (#{forumname},,#{cid},#{holdtime},#{loaction},#{subject},#{introduction});
+    </insert>
+
+    <delete id="deleteForumById" parameterType="String">
+        delete from forum where fid=#{fid}
+    </delete>
+
+    <update id="updateByObject" parameterType="forum">
+        update forum
+        set forumname=#{forumname},cid=#{cid},holdtime=#{holdtime},loaction=#{loaction},subject=#{subject},introduction=#{introduction}
+        where fid=#{fid}
+    </update>
+
+    <update id="updateByMap" parameterType="map">
+        update  forum
+        <set>
+            <if test="forumname !=null">forumname=#{forumname},</if>
+            <if test="cid !=null">cid=#{cid},</if>
+            <if test="holdtime !=null">holdtime=#{holdtime},</if>
+            <if test="loaction !=null">loaction=#{loaction},</if>
+            <if test="subject !=null">subject=#{subject},</if>
+            <if test="introduction !=null">introduction=#{introduction},</if>
+        </set>
+        where fid=#{fid}
+    </update>
+
+    <select id="selectForumById" parameterType="String" resultType="forum">
+        select * from forum where fid=#{fid}
+    </select>
+
+    <select id="selectForumByMap" parameterType="map" resultType="forum">
+        select * from forum
+        <where>
+            <if test="forumname !=null">and forumname=#{forumname}</if>
+            <if test="cid !=null">and cid=#{cid}</if>
+            <if test="holdtime !=null">and holdtime=#{holdtime}</if>
+            <if test="loaction !=null">and loaction=#{loaction}</if>
+            <if test="subject !=null">and subject=#{subject}</if>
+            <if test="introduction !=null">and introduction=#{introduction}</if>
+        </where>
+    </select>
+
+</mapper>

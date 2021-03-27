@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.team.ms.dao.FUMapper">
+    <insert id="insertFU">
+        INSERT INTO fu(uid,fid) VALUES(#{param1},#{param2})
+    </insert>
+
+    <delete id="deleteFUByUid" parameterType="string">
+        DELETE FROM fu WHERE uid=#{uid}
+    </delete>
+
+    <delete id="deleteFUByFid" parameterType="int">
+        DELETE FROM fu WHERE fid=#{fid}
+    </delete>
+
+    <delete id="deleteFUByFUid">
+        DELETE FROM fu WHERE uid=#{param1},fid=#{param2}
+    </delete>
+
+</mapper>

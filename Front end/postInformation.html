@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css"
+        integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets\css\nav.css" />
+    <title>information</title>
+</head>
+
+<body>
+    <div id="container">
+        <div id="top">
+            <nav>
+                <div id="toplogo">
+                    <img src="assets\images\favicon.png" alt="logo" />
+                    <h3>Forum platform</h3>
+                </div>
+                <div id="menu">
+                    <ul class="nav nav-pills">
+                        <li role="presentation"><a href="subChairMan.html">参会人数</a></li>
+                        <li role="presentation" class="active"><a href="#">信息发布</a></li>
+                        <li role="presentation"><a href="#">登出</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div id="main">
+            <div class="panel panel-info">
+                <div class="panel-heading">我的</div>
+                <div class="panel-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">id</li>
+                        <li class="list-group-item">分论坛名</li>
+                        <li class="list-group-item">分论坛主席</li>
+                    </ul>
+                    <button type="button" class="btn btn-default" data-toggle="modal"
+                        data-target="#myModal">发布信息</button>
+                </div>
+            </div>
+
+            <!-- 模态框（Modal） -->
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                &times;
+                            </button>
+                            <h4 class="modal-title" id="myModalLabel">
+                                消息发布
+                            </h4>
+                        </div>
+
+                        <form role="form" id="msg_form">
+                            <div class="form-group">
+                                <label for="name">标题</label>
+                                <br />
+                                <input id="msg_title" type="text" class="form-control" id="name" placeholder="请输入标题">
+                                <br />
+                                <label for="name">消息内容</label>
+                                <br />
+                                <textarea id="msg_content" class="form-control" rows="9" placeholder="请输入内容"></textarea>
+                            </div>
+                        </form>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                            </button>
+                            <button type="button" class="btn btn-primary">
+                                提交更改
+                            </button>
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal -->
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+    <!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- 包括所有已编译的插件 -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+</body>
+
+</html>

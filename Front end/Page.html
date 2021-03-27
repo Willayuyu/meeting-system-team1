@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人主页</title>
+
+    <link rel="shortcut icon" href="././assets/images/favicon.png" type="image/png">
+
+    <!--====== Magnific Popup CSS ======-->
+    <link rel="stylesheet" href="././assets/css/magnific-popup.css">
+
+    <!--====== Slick CSS ======-->
+    <link rel="stylesheet" href="././assets/css/slick.css">
+
+    <!--====== Line Icons CSS ======-->
+    <link rel="stylesheet" href="././assets/css/LineIcons.css">
+
+    <!--====== Bootstrap CSS ======-->
+    <link rel="stylesheet" href="././assets/css/bootstrap.min.css">
+
+    <!--====== Default CSS ======-->
+    <link rel="stylesheet" href="././assets/css/default.css">
+
+    <!--====== Style CSS ======-->
+    <link rel="stylesheet" href="././assets/css/style.css">
+
+</head>
+
+<body>
+    <section id="about" class="about-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="faq-content mt-45">
+                        <div class="about-title">
+                            <h6 class="sub-title">Personal Information</h6>
+                            <h4 class="title">个人主页</h4>
+                        </div> <!-- faq title -->
+                        <div class="about-accordion">
+                            <div class="accordion" id="accordionExample">
+                                <div class="card">
+                                    <div class="card-header" id="headingOne">
+                                        <a href="#information">个人信息</a>
+                                    </div>
+
+                                    <div >
+                                        <div class="card-body">
+                                            <p class="text">将展示您的用户名、邮箱和真实姓名</p>
+                                        </div>
+                                    </div> 
+                                </div> <!-- card -->
+                                <div class="card">
+                                    <div class="card-header" id="headingTwo">
+                                        <a href="#subscribe">关注分论坛</a>
+                                    </div>
+                                    <div id="collapseTwo">
+                                        <div class="card-body">
+                                            <p class="text">将展示您关注的分论坛列表</p>
+                                        </div>
+                                    </div>
+                                </div> <!-- card -->
+                                <div class="card">
+                                    <div class="card-header" id="headingThree">
+                                        <a href="#message">消息列表</a>
+                                    </div>
+                                    <div id="collapseThree">
+                                        <div class="card-body">
+                                            <p class="text">将展示您收到的分论坛消息通知</p>
+                                        </div>
+                                    </div>
+                                </div> <!-- card -->
+                            </div>
+                        </div> <!-- faq accordion -->
+                    </div> <!-- faq content -->
+                </div>
+                <div class="col-lg-9">
+                    <div class="mainbox">
+                        <div id="information">
+                            <h3>个人信息模块</h3><br>
+                            <div style="float: right;">
+                                <img src="./头像.jpg" class="round_icon" alt="">
+                            </div>
+                            <div>
+                                <div id="username">
+                                    <span>用户名：</span>
+                                    <span>Bobby</span>
+                                </div>
+                                <div id="mailbox">
+                                    <span>邮箱：</span>
+                                    <span>3113937807@qq.com</span>
+                                </div>
+                                <div id="realname">
+                                    <span>真实姓名：</span>
+                                    <span>邵涵洋</span>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <hr><br>
+                        <div id="subscribe">
+                            <h3>关注分论坛模块</h3><br>
+                            <div>
+                                <table class="table table-hover">
+                                    <thead>
+                                      <tr>
+                                        <th>分论坛名称</th>
+                                        <th>分论坛主席</th>
+                                        <th>分论坛时间</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <td>分论坛1</td>
+                                        <td>分论坛主席1</td>
+                                        <td>分论坛时间1</td>
+                                      </tr>
+                                      <tr>
+                                        <td>分论坛2</td>
+                                        <td>分论坛主席2</td>
+                                        <td>分论坛时间2</td>
+                                      </tr>
+                                      <tr>
+                                        <td>分论坛3</td>
+                                        <td>分论坛主席3</td>
+                                        <td>分论坛时间3</td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                            </div>
+                        </div>
+                        <hr><br>
+                        <div id="message">
+                            <h3>消息列表模块</h3><br>
+                            <div>
+                                <div>
+                                    <table class="table table-hover">
+                                        <thead>
+                                          <tr>
+                                            <th>消息编号</th>
+                                            <th>分论坛</th>
+                                            <th>题目</th>
+                                            <th>创建时间</th>
+                                            <th>内容</th>
+                                            <th>发布者</th>
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                          <tr>
+                                            <td>消息编号1</td>
+                                            <td>分论坛1</td>
+                                            <td>题目1</td>
+                                            <td>创建时间1</td>
+                                            <td>内容1</td>
+                                            <td>发布者1</td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+
+        <div style="text-align: center;">
+            <a href="#about"><button type="button" class="btn btn-primary btn-sm" style="margin: auto;">返回顶部</button></a>
+        </div>
+    </section>  
+
+    
+
+
+    <!--====== Jquery js ======-->
+    <script src="././assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="././assets/js/vendor/modernizr-3.7.1.min.js"></script>
+
+    <!--====== Bootstrap js ======-->
+    <script src="././assets/js/popper.min.js"></script>
+    <script src="././assets/js/bootstrap.min.js"></script>
+
+    <!--====== Slick js ======-->
+    <script src="././assets/js/slick.min.js"></script>
+
+    <!--====== Magnific Popup js ======-->
+    <script src="././assets/js/jquery.magnific-popup.min.js"></script>
+
+    <!--====== Ajax Contact js ======-->
+    <script src="././assets/js/ajax-contact.js"></script>
+
+    <!--====== Isotope js ======-->
+    <script src="././assets/js/imagesloaded.pkgd.min.js"></script>
+    <script src="././assets/js/isotope.pkgd.min.js"></script>
+
+    <!--====== Scrolling Nav js ======-->
+    <script src="././assets/js/jquery.easing.min.js"></script>
+    <script src="././assets/js/scrolling-nav.js"></script>
+
+    <!--====== Main js ======-->
+    <script src="././assets/js/main.js"></script>
+</body>
+
+</html>

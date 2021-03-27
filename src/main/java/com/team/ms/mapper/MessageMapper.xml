@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.team.ms.dao.MessageMapper">
+    <select id="selectMessage" resultType="Message">
+        select * from message
+    </select>
+    <select id="selectMessageById" resultType="Message">
+        select * from message where mid=#{mid}
+    </select>
+    <select id="selectMessageByPublisher" resultType="Message">
+        select * from message where publisher=#{publisher}
+    </select>
+    <insert id="insertMessage" parameterType="Message">
+        insert into message(mid,fid,title,createtime,content,publisher)
+        values (#{mid},#{fid},#{title},#{createtime},#{content},#{publisher})
+    </insert>
+    <delete id="deleteMessageById">
+        delete from message
+        where mid=#{mid}
+    </delete>
+    <update id="updateMessageById" parameterType="Message">
+        update from message
+        set fid=#{fid},
+        title=#{title},
+        createtime=#{createtime},
+        content=#{content},
+        publisher=#{publisher}
+        where mid=#{mid}
+    </update>
+</mapper>

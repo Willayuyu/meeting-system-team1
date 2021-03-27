@@ -17,6 +17,7 @@ import java.util.List;
 public class UserController {
     @Autowired
     UserService userService;
+    
     @RequestMapping("/selectUsersByForum")
     public String selectUsersByForum(@RequestParam("formname") String formname){
         List<User> users = userService.selectUsersByForum(formname);

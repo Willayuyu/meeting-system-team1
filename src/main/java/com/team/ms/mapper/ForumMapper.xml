@@ -9,7 +9,7 @@
         values (#{forumname},#{cid},#{holdtime},#{location},#{subject},#{introduction});
     </insert>
 
-    <delete id="deleteForumById" parameterType="String">
+    <delete id="deleteForumById" parameterType="int">
         delete from forum where fid=#{fid}
     </delete>
 
@@ -32,7 +32,7 @@
         where fid=#{fid}
     </update>
 
-    <select id="selectForumById" parameterType="String" resultType="com.team.ms.pojo.Forum">
+    <select id="selectForumById" parameterType="int" resultType="com.team.ms.pojo.Forum">
         select * from forum where fid=#{fid}
     </select>
 
@@ -58,11 +58,11 @@
         select forumname from forum where cid=#{cid}
     </select>
 
-    <select id="getAllFid" resultType="String">
+    <select id="getAllFid" resultType="int">
         select fid from forum
     </select>
 
-    <select id="getForumNameByFid" resultType="String" parameterType="String">
+    <select id="getForumNameByFid" resultType="String" parameterType="int">
         select forumname from forum where fid=#{fid}
     </select>
 

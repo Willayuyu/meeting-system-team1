@@ -25,7 +25,7 @@ public class DataController
   }
 
   @GetMapping("/forum/{id}")
-  public String getForumById(@PathVariable("id") String fid)
+  public String getForumById(@PathVariable("id") int fid)
   {
     return JSON.toJSONString(Result.successResult(forumMapper.selectForumById(fid)));
   }

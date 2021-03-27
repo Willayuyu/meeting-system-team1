@@ -57,7 +57,7 @@ public class UserController
       int role = admin.getRole();
       List<Map<String,Object>> maps=new ArrayList<>();
       if (role== Admin.MEETING_CHAIRMAN){
-        List<String> fids=forumService.getAllFid();
+        List<Integer> fids=forumService.getAllFid();
         for (int i = 0; i < fids.size(); i++) {
           Map<String,Object> map=new HashMap<>();
           map.put("forumname",forumService.getForumNameByFid(fids.get(i)));

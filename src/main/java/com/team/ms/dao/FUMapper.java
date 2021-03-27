@@ -15,5 +15,5 @@ public interface FUMapper
 
   void deleteFUByFUid(String uid,int fid);
 
-  int getParticipantsNumByFid(String fid);
+  int getParticipantsNumByFid(int fid);
 }

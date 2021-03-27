@@ -14,13 +14,13 @@ public interface ForumMapper
 
   void insertForum(Forum forum);
 
-  void deleteForumById(String fid);
+  void deleteForumById(int fid);
 
   void updateByObject(Forum forum);
 
   void updateByMap(Map params);
 
-  Forum selectForumById(String fid);
+  Forum selectForumById(int fid);
 
   List<Forum> selectForumByMap(Map params);
 
@@ -30,8 +30,8 @@ public interface ForumMapper
   //通过分论坛主席cid查找论坛名
   String getForumNameByCid(String cid);
 
-  List<String> getAllFid();
+  List<Integer> getAllFid();
 
-  String getForumNameByFid(String fid);
+  String getForumNameByFid(int fid);
 
 }

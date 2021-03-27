@@ -22,12 +22,12 @@ public class ForumServiceImpl implements ForumService{
     }
 
     @Override
-    public List<String> getAllFid() {
+    public List<Integer> getAllFid() {
         return forumMapper.getAllFid();
     }
 
     @Override
-    public String getForumNameByFid(String fid) {
+    public String getForumNameByFid(int fid) {
         return forumMapper.getForumNameByFid(fid);
     }
 

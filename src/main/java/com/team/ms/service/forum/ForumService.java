@@ -10,9 +10,9 @@ public interface ForumService {
     //获取一个论坛的参会人数
     int getOneForumparticipants(String cid);
 
-    List<String> getAllFid();
+    List<Integer> getAllFid();
 
-    String getForumNameByFid(String fid);
+    String getForumNameByFid(int fid);
 
     String getForumNameByCid(String cid);
 }

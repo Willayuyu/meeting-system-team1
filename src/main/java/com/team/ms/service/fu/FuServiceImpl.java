@@ -9,7 +9,7 @@ public class FuServiceImpl implements FuService{
     @Autowired
     FUMapper fuMapper;
     @Override
-    public int getParticipantsNumByFid(String fid) {
+    public int getParticipantsNumByFid(int fid) {
         return fuMapper.getParticipantsNumByFid(fid);
     }
 }

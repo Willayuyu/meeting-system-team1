@@ -39,10 +39,31 @@
                 </div>
             </nav>
         </div>
-        <div id="app">
-           
-
-        </div>
+        <script src="https://code.jquery.com/jquery.js"></script>
+        <script>
+            $(document).ready(function(){
+                var num;
+                $.ajax({
+                url: "http://8.140.106.208:8082/getTotalParticipants",
+                method: 'GET',
+                type: "json",
+                success: function (data) {
+                    data = $.parseJSON(data);
+                    var msg = data.code;
+                    //将返回的信息提取出
+                    console.log(data);
+                    alert(msg);
+                    if (msg == 200) {
+                        alert(data.data);
+                        $("#num").html(data.data);
+                    }
+                    else
+                        alert('人数请求失败');
+                }
+            })
+            
+            });
+        </script>
     </div>
 
 </body>

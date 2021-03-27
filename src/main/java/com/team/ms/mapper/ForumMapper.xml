@@ -48,4 +48,22 @@
         </where>
     </select>
 
+    <select id="getOneForumparticipants" resultType="int" parameterType="String">
+        select count(*) from fu
+        left join forum on fu.fid=forum.fid
+        where forum.cid=#{cid}
+    </select>
+
+    <select id="getForumNameByCid" parameterType="String" resultType="String">
+        select forumname from forum where cid=#{cid}
+    </select>
+
+    <select id="getAllFid" resultType="String">
+        select fid from forum
+    </select>
+
+    <select id="getForumNameByFid" resultType="String" parameterType="String">
+        select forumname from forum where fid=#{fid}
+    </select>
+
 </mapper>

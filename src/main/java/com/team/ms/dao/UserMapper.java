@@ -16,8 +16,10 @@ public interface UserMapper
     void updateUserByMap(Map params);
     List<User> selectUsersByMap(Map params);
     User selectUserById(String uid);
+    List<User> selectUsersByForum(String forumname);
     void deleteUser(String uid);
     boolean isUsernameExist(String username);
     boolean isEmailExist(String email);
     boolean isPhoneExist(String phone);
+    int getTotalParticipants();
 }

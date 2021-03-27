@@ -1,6 +1,7 @@
 package com.team.ms.service.register;
 
 import com.team.ms.dao.UserMapper;
+import com.team.ms.pojo.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,5 +27,11 @@ public class RegisterServiceImpl implements RegisterService
   public boolean judgePhone(String phone)
   {
     return !userMapper.isPhoneExist(phone);
+  }
+
+  @Override
+  public void register(User user)
+  {
+    userMapper.insertUser(user);
   }
 }

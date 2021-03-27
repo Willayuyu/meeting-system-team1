@@ -24,5 +24,14 @@ public interface ForumMapper
 
   List<Forum> selectForumByMap(Map params);
 
+  //获取一个论坛的参会人数
+  int getOneForumparticipants(String cid);
+
+  //通过分论坛主席cid查找论坛名
+  String getForumNameByCid(String cid);
+
+  List<String> getAllFid();
+
+  String getForumNameByFid(String fid);
 
 }

@@ -8,6 +8,12 @@ public enum ResultCode
 
   PASSWORD_WRONG(402,"密码错误"),
 
+  USERNAME_EXIST(411,"用户名存在"),
+
+  EMAIL_EXIST(412,"邮箱已存在"),
+
+  PHONE_EXIST(413,"电话号码已存在"),
+
   UNKNOWN_WRONG(500,"未知错误");
 
   //状态码

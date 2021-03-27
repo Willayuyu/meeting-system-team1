@@ -2,10 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>分论坛</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/css/subforum.css" rel="stylesheet">
-    <script src="https://unpkg.com/vue@next"></script>
 </head>
 <body>
     <div id="header">
@@ -13,7 +12,7 @@
     </div>
 
 
-    <div id="sub" class="left">
+    <div id="sub1" class="left">
         <div class="panel panel-primary">
             <div class="panel-body high">
                 <h2 class="center">分论坛信息</h2>
@@ -27,18 +26,18 @@
         </div>
     </div>
 
-    <div class="right">
+    <div id="sub2" class="right">
         <div class="panel panel-primary">
             <div class="panel-heading">消息通知</div>
             <div class="panel-body">
                 <div class="panel panel-default">
                     <div class="panel-body">
-                        标题：会议开启
+                        标题：{{title}}
                     </div>
                     <div class="panel-footer">
-                        <p>时间：2021.03.28~2021.03.29</p>
-                        <p>内容：XXXXXXXXXXXXXXXXXXXX会议即将开始</p>
-                        <p>发布人：张晨星</p>
+                        <p>时间：{{createtime}}</p>
+                        <p>内容：{{content}}</p>
+                        <p>发布人：{{publisher}}</p>
                     </div>
                 </div>
                 <div class="panel panel-default">
@@ -65,22 +64,30 @@
         </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
     <script>
-        const sub = {
-            data() {
-                return {
-                    forumname: "11",
-                    cid: "",
-                    holdtime: "",
-                    location: "",
-                    subject: "",
-                    introduction: ""
-                }
+        var app = new Vue({
+            el:"#sub1",
+            data:{
+                forumname: "",
+                cid: "",
+                holdtime: "",
+                location: "",
+                subject: "",
+                introduction: ""
+            },
+        })
+        var app = new Vue({
+            el:"#sub2",
+            data:{
+                title: "",
+                createtime: "",
+                content: "",
+                publisher: ""
             }
-        }
-
-        Vue.createApp(sub).mount('#two-way-binding')
-
+        })
     </script>
+
 </body>
 </html>

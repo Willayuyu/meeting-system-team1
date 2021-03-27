@@ -1,6 +1,8 @@
 package com.team.ms.service.login;
 
+import com.team.ms.dao.AdminMapper;
 import com.team.ms.dao.UserMapper;
+import com.team.ms.pojo.Admin;
 import com.team.ms.pojo.User;
 import com.team.ms.utils.HashUtil;
 import org.apache.ibatis.annotations.Mapper;
@@ -16,13 +18,34 @@ public class LoginServiceImpl implements LoginService
   @Autowired
   private UserMapper userMapper;
 
+  @Autowired
+  private AdminMapper adminMapper;
+
   @Override
-  public int judgeToken(String username, String password)
+  public int judgeUserToken(String username, String password)
   {
     User user=getUserByLoginName(username);
     if(user!=null)
     {
       if(HashUtil.getHashPassword(password).equals(user.getPassword()))
+      {
+        return CORRECT;
+      }
+      else
+      {
+        return PASSWORD_WRONG;
+      }
+    }
+    return USERNAME_WRONG;
+  }
+
+  @Override
+  public int judgeAdminToken(String username, String password)
+  {
+    Admin admin=getAdminByLoginName(username);
+    if(admin!=null)
+    {
+      if(HashUtil.getHashPassword(password).equals(admin.getPassword()))
       {
         return CORRECT;
       }
@@ -55,5 +78,13 @@ public class LoginServiceImpl implements LoginService
       flag=true;
     }
     return flag?userMapper.selectUsersByMap(params).get(0):null;
+  }
+
+  @Override
+  public Admin getAdminByLoginName(String loginName)
+  {
+    Map<String,Object> params=new HashMap<>();
+    params.put("username",loginName);
+    return adminMapper.selectAdminsByMap(params).get(0);
   }
 }

@@ -1,15 +1,15 @@
 .left{
-    width: 750px;
+    width: 40%;
     float: left;
-    margin-left: 250px;
+    margin-left: 10%;
     margin-top: 30px;
 }
 .left ul li{
     list-style-type: none;
 }
 .right{
-    width: 300px;
+    width: 20%;
     float: right;
-    margin-right: 100px;
+    margin-right: 10%;
     margin-top: 30px;
 }

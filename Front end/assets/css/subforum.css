@@ -1,25 +1,25 @@
 .left{
-    width: 800px;
+    width: 40%;
     float: left;
-    margin-left: 250px;
+    margin-left: 10%;
     margin-top: 30px;
 }
 .right{
-    width: 300px;
+    width: 20%;
     float: right;
-    margin-right: 100px;
+    margin-right: 10%;
     margin-top: 30px;
 }
 .bold{
     font-weight: bold;
-    font-size: 20px;
+    font-size: 1.4em;
     margin-top: 10px;
 }
 .center{
     text-align: center;
 }
 .goright{
-    margin-left: 170px;
+    margin-left: 10%;
 }
 .high{
     height: 500px;

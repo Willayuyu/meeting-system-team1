@@ -73,6 +73,18 @@
         <![CDATA[ select count(uid) from `user`where phone=#{phone} ]]>
     </select>
 
+    <select id="getTotalParticipants" resultType="int">
+        select count(*) from user
+    </select>
+
+    <select id="selectUsersByForum" resultMap="UserMap">
+        select u.uid uid,username,email,phone,realname,password,
+        f.fid,forumname,cid,holdtime,location,subject,introduction
+        from `user` u
+        left join fu fu on u.uid=fu.uid
+        left join forum f on fu.fid=f.fid
+        where f.forumname=#{forumname}
+    </select>
 
     <resultMap id="UserMap" type="com.team.ms.pojo.User">
         <result property="uid" column="uid"/>

@@ -1,5 +1,9 @@
 package com.team.ms.service.user;
 
+import com.team.ms.pojo.User;
+
+import java.util.List;
+
 public interface UserService
 {
   /**
@@ -9,4 +13,7 @@ public interface UserService
    * @return
    */
   boolean followForum(String uid,int fid);
+
+  List<User> selectUsersByForum(String forumname);
+  int getTotalParticipants();
 }

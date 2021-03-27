@@ -1,5 +1,7 @@
 package com.team.ms.service.register;
 
+import com.team.ms.pojo.User;
+
 public interface RegisterService
 {
   /**
@@ -22,6 +24,12 @@ public interface RegisterService
    * @return
    */
   boolean judgePhone(String phone);
+
+  /**
+   * 注册
+   * @param user
+   */
+  void register(User user);
 
 
 }

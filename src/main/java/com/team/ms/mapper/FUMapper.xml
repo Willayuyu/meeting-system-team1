@@ -19,4 +19,7 @@
         DELETE FROM fu WHERE uid=#{param1},fid=#{param2}
     </delete>
 
+    <select id="getParticipantsNumByFid" parameterType="String" resultType="int">
+        select count(*) from fu where fid=#{fid}
+    </select>
 </mapper>

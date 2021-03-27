@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-
+    <link rel="stylesheet" type="text/css" href="assets\css\nav.css" />
     <link rel="stylesheet" href="assets/css/login.css">
     <title>LOGIN</title>
 </head>
@@ -15,7 +15,7 @@
     </div>
     <div class="login">
         <div class="header">
-            用户进入
+            用户登录
         </div>
         <div class="input">
             <div class="input-border">
@@ -34,7 +34,8 @@
         </div>
         <div class="action">
             <div class="btn-login" id="login">登录</div>
-            <a href="Register.html">如未注册请先注册用户</a>
+
+            <p style="margin-top:15px;"><a href="Register.html" style=" text-decoration: none; color: white;">注意：如未注册请先注册用户</a></p>
         </div>
     </div>
 
@@ -49,14 +50,11 @@
             var index=myselect.selectedIndex ;
             type = myselect.options[index].value
             //alert(type);
-            
-
-            console.log(username);
             $.ajax({
                 url: "http://8.140.106.208:8082/login",
                 method: 'POST',
                 type: "json",
-                // async: false,
+                async: false,
                 //请求参数封装成对象，key  需求给了
                 data: { username: username, password: password ,type:type},
                 success: function (data) {
@@ -64,20 +62,29 @@
                     var msg = data.code;
                     //将返回的信息提取出
                     var user = data.data
+                    var type = user.role;
+                    alert(type);
                     console.log(data.data);
                     //alert(msg);
                     if (msg == 200) {
                         //alert('登录成功');
-                        window.location.href='Front end\Mainindex.html';
-
-
                         var vehgroupname = user; //获取页面输入框数据
                         sessionStorage.setItem('user', vehgroupname);//设置数据保存sessionStorage对象中
                         vehgroupname = sessionStorage.getItem('user');//获取sessionStorage对象中的数据
-                        
-                        alert(vehgroupname);
-
-                        alert(111);
+                        if(type == 1)
+                        {
+                            window.location.href='chairMan.html';
+                        }
+                        else if(type == 2){
+                            window.location.href='subChairMan.html';
+                        }
+                        else if(type == 3)
+                        {
+                            window.location.href='secretary.html'
+                        }
+                        else{
+                            window.location.href='Mainindex.html';
+                        }
 
                     }
                     else

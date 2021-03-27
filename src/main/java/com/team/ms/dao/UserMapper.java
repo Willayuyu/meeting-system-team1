@@ -5,14 +5,16 @@ import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Map;
 
 @Mapper
 @Repository
 public interface UserMapper
 {
     void insertUser(User user);
-    void updateUser(User user);
-    List<User> selectUsers();
+    void updateUserByObject(User user);
+    void updateUserByMap(Map params);
+    List<User> selectUsersByMap(Map params);
     User selectUserById(String uid);
     void deleteUser(String uid);
     boolean isUsernameExist(String username);

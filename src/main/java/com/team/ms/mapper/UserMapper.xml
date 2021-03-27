@@ -7,7 +7,8 @@
         insert into `user`(uid,username,email,phone,realname,password)
         values (#{uid},#{username},#{email},#{phone},#{realname},#{password})
     </insert>
-    <update id="updateUser" parameterType="User">
+
+    <update id="updateUserByObject" parameterType="User">
         update from `user`
         set username=#{username},
         email=#{email},
@@ -16,27 +17,43 @@
         password=#{password}
         where uid=#{uid}
     </update>
-    <select id="selectUsers" resultMap="UserMap">
-        select u.id uid,u.username username,u.email email,u.phone phone
-        u.realname realname,u.password password,
-        f.fid fid,f.forumname forumname,f.cid cid,
-        f.holdtime holdtime,f.location location,
-        f.subject subject,f.introduction introduction
+
+    <update id="updateUserByMap" parameterType="map">
+        update from `user`
+        <set>
+            <if test="username !=null">username=#{username},</if>
+            <if test="email !=null">email=#{email},</if>
+            <if test="phone !=null">phone=#{phone},</if>
+            <if test="realname !=null">realname=#{realname},</if>
+            <if test="password !=null">password=#{password}</if>
+        </set>
+        where uid=#{uid}
+    </update>
+
+    <select id="selectUsersByMap" parameterType="map" resultMap="UserMap">
+        select u.uid uid,username,email,phone,realname,password,
+        f.fid,forumname,cid,holdtime,location,subject,introduction
         from `user` u
         left join fu fu on u.uid=fu.uid
         left join forum f on fu.fid=f.fid
+        <where>
+            <if test="username !=null">AND username=#{username}</if>
+            <if test="email !=null">AND email=#{email}</if>
+            <if test="phone !=null">AND phone=#{phone}</if>
+            <if test="realname !=null">AND realname=#{realname}</if>
+            <if test="password !=null">AND password=#{password}</if>
+        </where>
     </select>
+
     <select id="selectUserById" resultMap="UserMap">
-        select u.id uid,u.username username,u.email email,u.phone phone
-        u.realname realname,u.password password,
-        f.fid fid,f.forumname forumname,f.cid cid,
-        f.holdtime holdtime,f.location location,
-        f.subject subject,f.introduction introduction
+        select u.uid uid,username,email,phone,realname,password,
+        f.fid,forumname,cid,holdtime,location,subject,introduction
         from `user` u
         left join fu fu on u.uid=fu.uid
         left join forum f on fu.fid=f.fid
         where u.uid=#{uid}
     </select>
+
     <delete id="deleteUser">
         delete from `user` where uid=#{uid}
     </delete>

@@ -2,7 +2,13 @@ package com.team.ms.pojo;
 
 public enum ResultCode
 {
-  SUCCESS(1,"请求成功~");
+  SUCCESS(200,"请求成功"),
+
+  USERNAME_WRONG(401,"用户名错误"),
+
+  PASSWORD_WRONG(402,"密码错误"),
+
+  UNKNOWN_WRONG(500,"未知错误");
 
   //状态码
   private Integer code;

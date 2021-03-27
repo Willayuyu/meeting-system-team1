@@ -11,6 +11,12 @@ import java.util.UUID;
 @AllArgsConstructor
 public class Admin
 {
+  public static final int MEETING_CHAIRMAN=1;
+
+  public static final int FORUM_CHAIRMAN=2;
+
+  public static final int SECRETARY=3;
+
   private String aid;       //管理员id
 
   private String username;  //用户名

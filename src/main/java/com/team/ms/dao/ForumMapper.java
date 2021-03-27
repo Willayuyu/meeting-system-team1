@@ -9,19 +9,20 @@ import java.util.Map;
 
 @Mapper
 @Repository
-public interface ForumMapper {
+public interface ForumMapper
+{
 
-    void insertForum(Forum forum);
+  void insertForum(Forum forum);
 
-    void deleteForumById(String fid);
+  void deleteForumById(String fid);
 
-    void updateByObject(Forum forum);
+  void updateByObject(Forum forum);
 
-    void updateByMap(Map params);
+  void updateByMap(Map params);
 
-    Forum selectForumById(String fid);
+  Forum selectForumById(String fid);
 
-    List<Forum> selectForumByMap(Map params);
+  List<Forum> selectForumByMap(Map params);
 
 
 }

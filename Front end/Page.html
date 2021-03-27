@@ -27,6 +27,8 @@
     <!--====== Style CSS ======-->
     <link rel="stylesheet" href="././assets/css/style.css">
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -40,127 +42,141 @@
                             <h4 class="title">个人主页</h4>
                         </div> <!-- faq title -->
                         <div class="about-accordion">
-                            <div class="accordion" id="accordionExample">
-                                <div class="card">
-                                    <div class="card-header" id="headingOne">
-                                        <a href="#information">个人信息</a>
-                                    </div>
+                            <div class="panel panel-primary">
+                                <div class="accordion" id="accordionExample" style="margin: 5%;">
+                                    <div class="card">
+                                        <div class="card-header" id="headingOne">
+                                            <a href="#information">个人信息</a>
+                                        </div>
 
-                                    <div >
-                                        <div class="card-body">
-                                            <p class="text">将展示您的用户名、邮箱和真实姓名</p>
+                                        <div >
+                                            <div class="card-body">
+                                                <p class="text">将展示您的用户名、邮箱和真实姓名</p>
+                                            </div>
                                         </div>
-                                    </div> 
-                                </div> <!-- card -->
-                                <div class="card">
-                                    <div class="card-header" id="headingTwo">
-                                        <a href="#subscribe">关注分论坛</a>
-                                    </div>
-                                    <div id="collapseTwo">
-                                        <div class="card-body">
-                                            <p class="text">将展示您关注的分论坛列表</p>
+                                    </div> <!-- card -->
+                                    <div class="card">
+                                        <div class="card-header" id="headingTwo">
+                                            <a href="#subscribe">关注分论坛</a>
                                         </div>
-                                    </div>
-                                </div> <!-- card -->
-                                <div class="card">
-                                    <div class="card-header" id="headingThree">
-                                        <a href="#message">消息列表</a>
-                                    </div>
-                                    <div id="collapseThree">
-                                        <div class="card-body">
-                                            <p class="text">将展示您收到的分论坛消息通知</p>
+                                        <div id="collapseTwo">
+                                            <div class="card-body">
+                                                <p class="text">将展示您关注的分论坛列表</p>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div> <!-- card -->
+                                    </div> <!-- card -->
+                                    <div class="card">
+                                        <div class="card-header" id="headingThree">
+                                            <a href="#message">消息列表</a>
+                                        </div>
+                                        <div id="collapseThree">
+                                            <div class="card-body">
+                                                <p class="text">将展示您收到的分论坛消息通知</p>
+                                            </div>
+                                        </div>
+                                    </div> <!-- card -->
+                                </div>
                             </div>
+
                         </div> <!-- faq accordion -->
                     </div> <!-- faq content -->
                 </div>
                 <div class="col-lg-9">
                     <div class="mainbox">
-                        <div id="information">
-                            <h3>个人信息模块</h3><br>
-                            <div style="float: right;">
-                                <img src="./assets/images/头像.jpg" class="round_icon" alt="">
-                            </div>
-                            <div>
-                                <div id="username">
-                                    <span>用户名：</span>
-                                    <span>Bobby</span>
+                        <div class="panel panel-success">
+                            <div id="information" style="margin: 5%;">
+                                <h3>个人信息模块</h3><br>
+                                <div style="float: right;">
+                                    <img src="./assets/images/头像.jpg" class="round_icon" alt="">
                                 </div>
-                                <div id="mailbox">
-                                    <span>邮箱：</span>
-                                    <span>3113937807@qq.com</span>
+                                <div>
+                                    <div id="username">
+                                        <span>用户名：</span>
+                                        <span>Bobby</span>
+                                    </div>
+                                    <div id="mailbox">
+                                        <span>邮箱：</span>
+                                        <span>3113937807@qq.com</span>
+                                    </div>
+                                    <div id="realname">
+                                        <span>真实姓名：</span>
+                                        <span>邵涵洋</span>
+                                    </div>
                                 </div>
-                                <div id="realname">
-                                    <span>真实姓名：</span>
-                                    <span>邵涵洋</span>
-                                </div>
-                            </div>
-                            
-                        </div>
-                        <hr><br>
-                        <div id="subscribe">
-                            <h3>关注分论坛模块</h3><br>
-                            <div>
-                                <table class="table table-hover">
-                                    <thead>
-                                      <tr>
-                                        <th>分论坛名称</th>
-                                        <th>分论坛主席</th>
-                                        <th>分论坛时间</th>
-                                      </tr>
-                                    </thead>
-                                    <tbody>
-                                      <tr>
-                                        <td>分论坛1</td>
-                                        <td>分论坛主席1</td>
-                                        <td>分论坛时间1</td>
-                                      </tr>
-                                      <tr>
-                                        <td>分论坛2</td>
-                                        <td>分论坛主席2</td>
-                                        <td>分论坛时间2</td>
-                                      </tr>
-                                      <tr>
-                                        <td>分论坛3</td>
-                                        <td>分论坛主席3</td>
-                                        <td>分论坛时间3</td>
-                                      </tr>
-                                    </tbody>
-                                  </table>
+
                             </div>
                         </div>
+
                         <hr><br>
-                        <div id="message">
-                            <h3>消息列表模块</h3><br>
-                            <div>
+
+                        <div class="panel panel-success">
+                            <div id="subscribe" style="margin: 5%;">
+                                <h3>关注分论坛模块</h3><br>
                                 <div>
                                     <table class="table table-hover">
                                         <thead>
-                                          <tr>
-                                            <th>消息编号</th>
-                                            <th>分论坛</th>
-                                            <th>题目</th>
-                                            <th>创建时间</th>
-                                            <th>内容</th>
-                                            <th>发布者</th>
-                                          </tr>
+                                        <tr>
+                                            <th>分论坛名称</th>
+                                            <th>分论坛主席</th>
+                                            <th>分论坛时间</th>
+                                        </tr>
                                         </thead>
                                         <tbody>
-                                          <tr>
-                                            <td>消息编号1</td>
+                                        <tr>
                                             <td>分论坛1</td>
-                                            <td>题目1</td>
-                                            <td>创建时间1</td>
-                                            <td>内容1</td>
-                                            <td>发布者1</td>
-                                          </tr>
+                                            <td>分论坛主席1</td>
+                                            <td>分论坛时间1</td>
+                                        </tr>
+                                        <tr>
+                                            <td>分论坛2</td>
+                                            <td>分论坛主席2</td>
+                                            <td>分论坛时间2</td>
+                                        </tr>
+                                        <tr>
+                                            <td>分论坛3</td>
+                                            <td>分论坛主席3</td>
+                                            <td>分论坛时间3</td>
+                                        </tr>
                                         </tbody>
-                                      </table>
+                                    </table>
                                 </div>
                             </div>
                         </div>
+
+                        <hr><br>
+
+                        <div class="panel panel-success">
+                            <div id="message" style="margin: 5%;">
+                                <h3>消息列表模块</h3><br>
+                                <div>
+                                    <div>
+                                        <table class="table table-hover">
+                                            <thead>
+                                            <tr>
+                                                <th>消息编号</th>
+                                                <th>分论坛</th>
+                                                <th>题目</th>
+                                                <th>创建时间</th>
+                                                <th>内容</th>
+                                                <th>发布者</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td>消息编号1</td>
+                                                <td>分论坛1</td>
+                                                <td>题目1</td>
+                                                <td>创建时间1</td>
+                                                <td>内容1</td>
+                                                <td>发布者1</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div> <!-- row -->
@@ -169,7 +185,10 @@
         <div style="text-align: center;">
             <a href="#about"><button type="button" class="btn btn-primary btn-sm" style="margin: auto;">返回顶部</button></a>
         </div>
-    </section> 
+    </section>  
+
+    
+
 
     <!--====== Jquery js ======-->
     <script src="././assets/js/vendor/jquery-1.12.4.min.js"></script>

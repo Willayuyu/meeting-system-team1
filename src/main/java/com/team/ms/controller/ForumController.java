@@ -13,11 +13,10 @@ import org.springframework.web.bind.annotation.*;
 public class ForumController {
     @Autowired
     ForumService forumService;
-
     @RequestMapping("/insertForum")
     public String insertForum(@RequestBody Forum forum)
     {
-        forumService.insertForum(forum);
+        forumService.createForum(forum);
         return JSON.toJSONString(Result.successResult());
     }
 }

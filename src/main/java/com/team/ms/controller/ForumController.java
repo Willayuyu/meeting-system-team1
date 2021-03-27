@@ -16,7 +16,7 @@ public class ForumController {
     @RequestMapping("/insertForum")
     public String insertForum(@RequestBody Forum forum)
     {
-        forumService.createForum(forum);
+        forumService.insertForum(forum);
         return JSON.toJSONString(Result.successResult());
     }
 }

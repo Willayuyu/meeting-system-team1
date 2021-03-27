@@ -31,14 +31,24 @@ public class AdminMapperTest
   {
     adminMapper.deleteAdminById("213");
   }
+  @Test
+  void updateByObjectTest(){
 
+  }
 
+  @Test
+  void updateByMapTest(Map params){
 
-//  void updateByObject(Admin admin);
-//
-//  void updateByMap(Map params);
-//
-//  Admin selectAdminById(String aid);
-//
-//  List<Admin> selectAdminsByMap(Map params);
+  }
+
+  @Test
+  void selectAdminByIdTest(String aid){
+
+  }
+
+  @Test
+  void selectAdminsByMap(Map params){
+
+  }
+
 }

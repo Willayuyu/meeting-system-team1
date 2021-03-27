@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="assets/css/login.css">
+    <title>LOGIN</title>
+</head>
+
+<body>
+    <div class="image">
+        <!-- 图片大家可以自选电脑里任意，以写好调整图片大小css代码 -->
+
+    </div>
+    <div class="login">
+        <div class="header">
+            用户进入
+        </div>
+        <div class="input">
+            <div class="input-border">
+                <input type="text" class="border" id="username" placeholder="用户名">
+            </div>
+            <div class="input-border">
+                <input type="password" class="border" id="password" placeholder="密码">
+            </div>
+            <div class="select">
+                <select>
+                    <option value="admin">管理员</option>
+                    <option value="user">用户</option>
+                </select>
+            </div>
+
+        </div>
+        <div class="action">
+            <div class="btn-login" id="login">登录</div>
+            <a href="Register.html">如未注册请先注册用户</a>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script>
+        $("#login").click(function () {
+            var username = $('#username').val();
+            var password = $('#password').val();
+            console.log(username);
+            $.ajax({
+                url: "http://8.140.106.208:8082/login",
+                method: 'POST',
+                type: "json",
+                // async: false,
+                //请求参数封装成对象，key  需求给了
+                data: { username: username, password: password },
+                success: function (data) {
+                    data = $.parseJSON(data);
+                    var msg = data.code;
+                    //将返回的信息提取出
+                    console.log(data);
+                    alert(msg);
+                    if (msg == 200) {
+                        alert('登录成功');
+                        window.location.href='Front end\Mainindex.html';
+                    }
+                    else
+                        alert('登录失败');
+                }
+            })
+        });
+    </script>
+</body>
+
+</html>

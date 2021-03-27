@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="assets\css\nav.css" />
+
     <link rel="stylesheet" href="assets/css/login.css">
     <title>LOGIN</title>
 </head>
@@ -24,18 +24,17 @@
             <div class="input-border">
                 <input type="password" class="border" id="password" placeholder="密码">
             </div>
-            <div class="select">
-                <select>
-                    <option value="admin">管理员</option>
-                    <option value="user">用户</option>
+            <div class="select" >
+                <select id="myselect">
+                    <option value="2">管理员</option>
+                    <option value="1">用户</option>
                 </select>
             </div>
 
         </div>
         <div class="action">
             <div class="btn-login" id="login">登录</div>
-
-            <p style="margin-top:15px;"><a href="Register.html" style=" text-decoration: none; color: white;">注意：如未注册请先注册用户</a></p>
+            <a href="Register.html">如未注册请先注册用户</a>
         </div>
     </div>
 
@@ -44,6 +43,14 @@
         $("#login").click(function () {
             var username = $('#username').val();
             var password = $('#password').val();
+            
+
+            var myselect=document.getElementById("myselect");
+            var index=myselect.selectedIndex ;
+            type = myselect.options[index].value
+            //alert(type);
+            
+
             console.log(username);
             $.ajax({
                 url: "http://8.140.106.208:8082/login",
@@ -51,16 +58,27 @@
                 type: "json",
                 // async: false,
                 //请求参数封装成对象，key  需求给了
-                data: { username: username, password: password },
+                data: { username: username, password: password ,type:type},
                 success: function (data) {
                     data = $.parseJSON(data);
                     var msg = data.code;
                     //将返回的信息提取出
-                    console.log(data);
-                    alert(msg);
+                    var user = data.data
+                    console.log(data.data);
+                    //alert(msg);
                     if (msg == 200) {
-                        alert('登录成功');
+                        //alert('登录成功');
                         window.location.href='Front end\Mainindex.html';
+
+
+                        var vehgroupname = user; //获取页面输入框数据
+                        sessionStorage.setItem('user', vehgroupname);//设置数据保存sessionStorage对象中
+                        vehgroupname = sessionStorage.getItem('user');//获取sessionStorage对象中的数据
+                        
+                        alert(vehgroupname);
+
+                        alert(111);
+
                     }
                     else
                         alert('登录失败');
